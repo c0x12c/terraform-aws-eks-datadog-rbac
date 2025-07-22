@@ -9,6 +9,8 @@ locals {
 }
 
 resource "kubernetes_cluster_role" "datadog_agent" {
+  count = var.create_datadog_agent_cluster_role ? 1 : 0
+
   metadata {
     name = var.datadog_agent_cluster_role_name
   }
@@ -47,5 +49,5 @@ resource "kubernetes_cluster_role_binding_v1" "datadog_agent" {
     }
   }
 
-  depends_on = [kubernetes_cluster_role.datadog_agent]
+  depends_on = [kubernetes_cluster_role.datadog_agent[0]]
 }
