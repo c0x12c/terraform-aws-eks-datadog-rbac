@@ -26,3 +26,9 @@ variable "create_datadog_agent_cluster_role" {
   type        = bool
   default     = true
 }
+
+variable "enable_default_service_accounts" {
+  description = "Enable or disable binding of default service accounts"
+  type        = bool
+  default     = true
+}

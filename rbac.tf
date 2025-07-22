@@ -1,9 +1,11 @@
 locals {
+  default_service_account = var.enable_default_service_accounts ? {
+    default     = distinct(concat(["default"], [var.default_service_account]))
+    kube-system = ["kube-system"]
+  } : {}
+
   service_accounts = merge(
-    {
-      default     = distinct(concat(["default"], [var.default_service_account])),
-      kube-system = ["kube-system"]
-    },
+    local.default_service_account,
     var.custom_service_accounts,
   )
 }

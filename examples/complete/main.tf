@@ -8,4 +8,5 @@ module "eks_datadog_rbac" {
   }
 
   datadog_agent_cluster_role_name = "datadog-agent"
+  enable_default_service_accounts = false
 }

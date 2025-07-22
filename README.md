@@ -51,6 +51,7 @@ No modules.
 | <a name="input_custom_service_accounts"></a> [custom\_service\_accounts](#input\_custom\_service\_accounts) | Map of service account names for binding with Datadog.<br/>Each key represents a namespace, and the value is a list of service account names.<br/>  {<br/>    namespace = ["service-account1", "service-account2]<br/>  } | `map(list(string))` | `{}` | no |
 | <a name="input_datadog_agent_cluster_role_name"></a> [datadog\_agent\_cluster\_role\_name](#input\_datadog\_agent\_cluster\_role\_name) | Name of the ClusterRole to create in order to configure Datadog Agents | `string` | n/a | yes |
 | <a name="input_default_service_account"></a> [default\_service\_account](#input\_default\_service\_account) | Default service account name for binding with Datadog | `string` | `"default"` | no |
+| <a name="input_enable_default_service_accounts"></a> [enable\_default\_service\_accounts](#input\_enable\_default\_service\_accounts) | Enable or disable binding of default service accounts | `bool` | `true` | no |
 
 ## Outputs
 
